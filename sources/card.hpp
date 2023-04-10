@@ -58,42 +58,26 @@ namespace ariel
 
         static vector<Card> Create_cards()
         {
-            cout << "create cards" << endl;
 
             std::vector<Card> deck;
-            cout << "create vector" << endl;
             int index = 0;
             for (int suit = Card::SPADES; suit <= Card::DIAMONDS; suit++)
             {
                 for (int value = ACE; value <= KING; value++)
                 {
                     deck.push_back(Card(value, (Card::Suit)suit));
-                    // get the value of the card from the deck
-                    //  cout<<"deck value is"<<deck[(size_t)index].getValue()<<endl;
-                    //  cout<<"deck value is"<<deck[(size_t)index].getSuitName()<<endl;
-                    //  index++;
+                
                 }
-                // cout<<"deck size is"<<deck.size()<<endl;
-                // cout<<"#############################################"<<endl;
+               
             }
             srand(time(0));
             random_shuffle(deck.begin(), deck.end());
-            cout << "inside shuffle" << endl;
-            cout << "deck size is" << deck.size() << endl;
+    
 
             return deck;
         }
 
-        //     static vector<Card> Shuffle(){
-
-        //     vector<Card> deck = Create_cards();
-        //     srand(time(0));
-        //     random_shuffle(deck.begin(), deck.end());
-        //     cout<<"inside shuffle"<<endl;
-        //     cout<<"deck size is"<<deck.size()<<endl;
-        //     return deck;
-        // }
-
+     
         string getSuitName() const
         {
             switch (suit)
